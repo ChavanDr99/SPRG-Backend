@@ -1,5 +1,6 @@
 const express = require('express');
 const sql = require('mssql');
+require('dotenv').config();
  const app = express();
 const bcrypt =require('bcryptjs');
  app.use(express.json()); app.use(express.urlencoded({extended:true}));
@@ -9,11 +10,11 @@ const bcrypt =require('bcryptjs');
     methods:["Post","Get"],
  }));
  const defaultConfig = {
-  user: 'sa',
-  password: '1234',
-  server: 'PC1\\MSSQLSERVER2022',
-  driver: 'msnodesqlv8',
-  database: 'Digital_Factory',
+  user: process.env.DB_USER ,
+  password: process.env.DB_PASSWORD ,
+  server: process.env.DB_SERVER ,
+  driver: process.env.DB_DRIVER ,
+  database: process.env.DB_DATABASE ,
   options: {
     encrypt: false,
     requestTimeout: 300000 ,
