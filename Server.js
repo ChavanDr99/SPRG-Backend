@@ -16,7 +16,8 @@ const bcrypt =require('bcryptjs');
   driver: process.env.DB_DRIVER ,
   database: process.env.DB_DATABASE ,
   options: {
-    encrypt: false,
+    encrypt: true,
+    trustServerCertificate: true,
     requestTimeout: 300000 ,
   }
 };
