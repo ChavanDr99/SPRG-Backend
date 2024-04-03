@@ -6,7 +6,7 @@ const bcrypt =require('bcryptjs');
  app.use(express.json()); app.use(express.urlencoded({extended:true}));
  const cors = require('cors');
  app.use(cors({
-  origin:["http://localhost:5173"],
+  origin:["https://siemens-report-generator.netlify.app/"],
     methods:["Post","Get"],
  }));
  const defaultConfig = {
